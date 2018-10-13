@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+.main-container {
+    /* width: 100%; */
+}
+
+.main-container img {
+    max-height: 40px;
+    width: auto;
+}
+
+.main-container li {
+    margin: 2%;
+    height: 100px;
+    display: inline;
+    max-width: 15%;
+}
+
+.main-container ul:first-child{
+    background: lightseagreen;
+    text-transform: uppercase;
+    /* width: 100%; */
+    border-right: 10px solid white;
+    padding: 10px;
+    /* margin: 1.4em; */
+}
+
+.main-container ul:first-child li {
+    margin: 4%;
+
+}
+
+.main-container ul {
+    /* width: 100%; */
+    padding: 0;
+    height: 75px;
+    text-transform: uppercase;
+    border-color: lightseagreen;
+    border-style: solid;
+    margin: 3%;
+
+}
+
+.seperator {
+    font-size: 3em;
+    color: lightseagreen;
+}

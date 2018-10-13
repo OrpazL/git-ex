@@ -1,0 +1,24 @@
+.balloon {
+    width: 100px;
+    height: 120px;
+    border-radius: 100px;
+    border-bottom-left-radius: 200px;
+    border-bottom-right-radius: 200px;
+    margin: 20px;
+    position: absolute;
+    transition: 1s;
+    bottom: 1;
+}
+
+.balloon1 {
+    background-color: cornflowerblue;
+}
+
+.balloon2 {
+    background-color: crimson;
+    left: 150px;
+}
+
+.center-content {
+    text-align: center;
+}

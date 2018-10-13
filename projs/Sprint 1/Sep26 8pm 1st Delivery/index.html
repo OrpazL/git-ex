@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/minesweeper.css">
+    <title>Minesweeper</title>
+</head>
+
+<body onload="init(1)" oncontextmenu="return false;">
+
+    <div class="background"><img src="img/background.gif"/></div>
+
+    <table align="center" border="2" style="margin-top:5%;">
+        <tbody class="header-container center">
+            <tr>
+                <td>
+                    <span class="mines-counter header"></span>
+                </td>
+                <td>
+                    <button class="btn-smiley header" onmousedown="smileyClick(true)" onmouseup="smileyClick(false)"
+                        onclick="init()">&#128578;</button>
+                </td>
+                <td>
+                    <span class="timer header"><span id="minutes">00</span>:<span id="seconds">00</span></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" style="height: 0.5em;">
+                    <span class="best-time-line">Best time for current level: <span class="best-time"></span>(s)</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="levels center">
+        <button class="btn-level" id="btn-easy" onclick="init(0)">Easy</button>
+        <button class="btn-level" id="btn-medium" onclick="init(1)">Medium</button>
+        <button class="btn-level" id="btn-hard" onclick="init(2)">Hard</button>
+        <button class="btn-level" id="btn-custom" onclick="init(+prompt('Enter Size:'))">Custom</button>
+    </div>
+
+    <table align="center" border="4">
+        <tbody class="board-container"></tbody>
+    </table>
+
+    <script src="js/board.js"></script>
+    <script src="js/game.js"></script>
+</body>
+
+</html>

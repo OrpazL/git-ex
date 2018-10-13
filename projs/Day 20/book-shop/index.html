@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Books Shop</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/books.css">
+    <link rel="stylesheet" href="css/books-rating.css">
+</head>
+
+<body onload="init()">
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">
+                <img src="https://getbootstrap.com/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30"
+                    class="d-inline-block align-top" alt="">
+                Books Shop</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- NEW BOOK CREATION -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Create
+            New Book</button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">New Book Creation</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Book's Title:</label>
+                                <input type="text" class="form-control" id="new-book-title">
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Price ($):</label>
+                                <input class="form-control" id="new-book-price" />
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Description:</label>
+                                <textarea class="form-control" id="new-book-desc"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close-book-creation">Close</button>
+                        <button type="button" class="btn btn-primary" onclick="onAddBook()">Save Book!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SWITCH VIEWS -->
+        <!-- <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+                <input type="radio" name="options" id="option1" autocomplete="off" checked>&#8759;</label>
+            <label class="btn btn-secondary">
+                <input type="radio" name="options" id="option2" autocomplete="off">&#8801;</label>
+        </div> -->
+    </div>
+
+    <!-- TABLE CONTAINTER -->
+    <div class="container">
+
+        <table class="table table-striped book-list-table">
+            <thead>
+                <tr>
+                    <th scope="col">#id</th>
+                    <th scope="col" onclick="onSortBy('title')">Book Title</th>
+                    <th scope="col" onclick="onSortBy('price')">Price</th>
+                    <th scope="col" colspan="3">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- CARDS CONTAINTER -->
+    <div class="book-list card-deck containter">
+    </div>
+
+    <!-- BOOK DETAILS MODAL -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Book Details:</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="read-book-modal">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <div class="container" id="rating-stars">
+                    </div>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close-read-book-modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGES BUTTONS -->
+    <div class="container text-center d-flex justify-content-center">
+        <button class="btn btn-secondary" onclick="onPrevPage()">Prev Page</button>
+        <div class="btn-toolbar d-inline" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group mx-2" role="group" aria-label="First group">
+                <button type="button" class="btn btn-secondary" onclick="goToPage(1)">1</button>
+                <button type="button" class="btn btn-secondary" onclick="goToPage(2)">2</button>
+                <button type="button" class="btn btn-secondary" onclick="goToPage(3)">3</button>
+                <button type="button" class="btn btn-secondary" onclick="goToPage(4)">4</button>
+            </div>
+        </div>
+        <button class="btn btn-secondary" onclick="onNextPage()">Next Page</button>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="js/util-service.js"></script>
+    <script src="js/books-rating.js"></script>
+    <script src="js/books-service.js"></script>
+    <script src="js/books.js"></script>
+</body>
+
+</html>

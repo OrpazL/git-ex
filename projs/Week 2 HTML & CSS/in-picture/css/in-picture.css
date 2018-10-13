@@ -1,0 +1,31 @@
+body {
+    /* background-color: #cccccc; */
+    background-image: url("../img/background.png");
+}
+.header {
+    text-align: center;
+}
+
+.answers div{
+    background-color: cadetblue;
+    transition: .3s;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+    width: 40%;
+    margin-left: 30%;
+}
+
+.answers div:hover {
+    background-color: coral;
+    font-style: italic;
+}
+
+.image {
+    text-align: center;
+}
+
+.image img {
+    max-width: 200px;
+}
+

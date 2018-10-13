@@ -1,0 +1,88 @@
+body {
+    background-color: lavender;
+    text-align: center;
+}
+
+.done {
+    text-decoration: line-through red;
+}
+
+.btn-delete {
+    border: 0;
+    border-radius: 50%;
+    background-color: lightcoral;
+    cursor: pointer;
+    float:right;
+    margin: 0 5px;
+}
+
+.btn-delete:hover {
+    background-color: brown;
+    color:white;
+}
+
+.btn-delete:active {
+    background-color: red;
+
+}
+
+.btn-todoUp , .btn-todoDown {
+    border: 0;
+    border-radius: 50%;
+    background-color: royalblue;
+    color: white;
+    cursor: pointer;
+    float:right;
+    margin: 0 2px;
+}
+
+.btns-movements {
+    visibility: hidden;
+}
+
+.btn-todoUp:hover , .btn-todoDown:hover {
+    background-color: white;
+    color: royalblue;
+}
+
+.btn-todoUp:active , .btn-todoDown:active {
+    background-color: wheat;
+    color: black;
+}
+
+.add-todo-container {
+    background-color: chocolate;
+    padding: 10px;
+}
+
+h1 {
+    color: chocolate;
+}
+
+header {
+    text-align: center;
+}
+
+select#importance-selector:invalid {
+    color: gray;
+}
+#importance-selector option {
+    color: black;
+}
+
+.required {
+    border: 1px solid red;
+}
+
+input:focus {
+    background-color: khaki;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.todo-list li {
+    width: 50%;
+    margin: 0 auto;
+}

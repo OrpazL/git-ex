@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Touch Nums</title>
+    <link rel="stylesheet" href="css/touch-nums.css">
+</head>
+
+<body onload="startGame(1)">
+    <h1>Touch Nums</h1>
+    
+    <label id="minutes">00</label>:<label id="seconds">00</label>
+
+
+    <table border="1" cellpadding="10" align="center">
+        <tbody class="board"></tbody>
+    </table>
+    <hr/>
+    <button onclick="changeLevelBtn()">Change Level</button>
+
+    <div class="modal">
+        <button onclick="startGame(1)">Easy 4X4</button>
+        <button onclick="startGame(2)">Medium 5X5</button>
+        <button onclick="startGame(3)">Hard 6X6</button>
+    </div>
+
+    <script src="js/touch-nums.js"></script>
+</body>
+
+</html>

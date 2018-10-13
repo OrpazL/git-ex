@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+}
+
+.outer {
+    height: 500px;
+    width: 1000px;
+    position: relative;
+    background-color: darkblue;
+}
+
+.inner {
+    height: 300px;
+    width: 600px;
+    position:absolute;
+    top: 20%;
+    left: 20%;
+    text-align: center;
+    background-color: whitesmoke;
+    padding: 20px;
+    column-count: 4;
+    color: navy;
+}
+
+.inner:hover {
+    animation: ani1 2s infinite;
+}
+
+@keyframes ani1 {
+    0% {
+        background-color: whitesmoke;
+        color:navy;
+    }
+    50% {
+        background-color: cadetblue;
+        color: wheat;
+    }
+    100% {
+        background-color: whitesmoke;
+        color: navy;
+    }
+}
+
+.inner:active {
+    animation: ani2 .7s infinite;
+}
+
+@keyframes ani2 {
+    0% {
+        background-color: red;
+    }
+    50% {
+        background-color: whitesmoke;
+        transform: rotate(15deg);
+    }
+    100% {
+        background-color: red;
+        transform: rotate(-15deg);
+    }
+}

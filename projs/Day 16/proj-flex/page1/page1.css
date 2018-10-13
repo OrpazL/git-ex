@@ -1,0 +1,237 @@
+html,
+body {
+    min-height: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+}
+
+
+.main-container {
+    display: flex;
+}
+header {
+    background-color: black;
+    color: white;
+    height: 50px;
+}
+
+main {
+    background-color: darkcyan;
+    color: wheat;
+    height: 50%;
+    width: 100%;
+}
+
+nav {
+    background-color: sandybrown;
+}
+
+aside {
+    background-color: lightgray;
+}
+
+footer {
+    background-color: teal;
+    color: wheat;
+    margin: 1%;
+    height: 50px;
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    html,
+    body {
+        min-height: 100%;
+    }
+
+    body {
+        display: flex;
+    }
+    .main-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        /* margin: 10px 0; */
+        flex-wrap: wrap;
+    }
+
+    .flex-side {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    header {
+        background-color: black;
+        color: white;
+        height: 50px;
+    }
+
+    main {
+        background-color: darkcyan;
+        color: wheat;
+        height: 50%;
+        width: 100%;
+    }
+
+    nav {
+        background-color: sandybrown;
+        width: 74%;
+    }
+
+    aside {
+        background-color: lightgray;
+        width: 24%;
+    }
+
+    footer {
+        background-color: teal;
+        color: wheat;
+        margin: 1%;
+        height: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    html,
+    body {
+        min-height: 100%;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+    .main-container {
+        display: flex;
+        flex-direction: column;
+    }
+    header {
+        background-color: black;
+        color: white;
+        height: 50px;
+    }
+
+    main {
+        background-color: darkcyan;
+        color: wheat;
+        height: 50%;
+        width: 100%;
+    }
+
+    nav {
+        background-color: sandybrown;
+        width: 100%;
+    }
+
+    aside {
+        background-color: lightgray;
+        width: 100%;
+    }
+
+    footer {
+        background-color: teal;
+        color: wheat;
+        margin: 1%;
+        height: 50px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    html,
+    body {
+        min-height: 100%;
+    }
+
+    body {
+        display: flex;
+        align-content: stretch;
+    }
+    .main-container {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .flex-side {
+        width: 25%;
+    }
+    header {
+        background-color: black;
+        color: white;
+        height: 50px;
+    }
+
+    main {
+        background-color: darkcyan;
+        color: wheat;
+        height: 300px;
+    }
+
+    nav {
+        background-color: sandybrown;
+        height: 70%;
+    }
+
+    aside {
+        background-color: lightgray;
+        overflow: scroll;
+        height: 30%;
+    }
+
+    footer {
+        background-color: teal;
+        color: wheat;
+        margin: 1%;
+        height: 50px;
+    }
+}
+
+@media (min-width: 1200px) {
+    html,
+    body {
+        min-height: 100%;
+    }
+
+    body {
+        display: flex;
+        align-content: stretch;
+    }
+    .main-container {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .flex-side {
+        width: 30%;
+    }
+    header {
+        background-color: black;
+        color: white;
+        height: 50px;
+    }
+
+    main {
+        background-color: darkcyan;
+        color: wheat;
+        height: 300px;
+    }
+
+    nav {
+        background-color: sandybrown;
+        height: 70%;
+    }
+
+    aside {
+        background-color: lightgray;
+        overflow: scroll;
+        height: 30%;
+    }
+
+    footer {
+        background-color: teal;
+        color: wheat;
+        margin: 1%;
+        height: 50px;
+    }
+}

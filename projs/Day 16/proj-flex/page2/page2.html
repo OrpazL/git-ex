@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="page2.css">
+</head>
+
+<body>
+    <header>
+        <h1>HEADER</h1>
+        <div class="sidebar-btn" onclick="showSidebar()">&#8801;</div>
+    </header>
+    <div class="flex-container">
+        <main>
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </main>
+    </div>
+
+
+    <aside>
+        <ul>
+            <li>1 abcd</li>
+            <li>2 abcd</li>
+            <li>3 abcd</li>
+        </ul>
+    </aside>
+    <div class="aside-bg" onclick="showSidebar()"></div>
+    <script>
+        function showSidebar() {
+            var elSidebar = document.querySelector('aside');
+            var elSidebarBG = document.querySelector('.aside-bg');
+            if (elSidebar.classList.contains('open')) {
+                elSidebar.classList.remove('open');
+                elSidebarBG.style.visibility = 'hidden';
+
+            } else {
+                elSidebar.classList.add('open');
+                elSidebarBG.style.visibility = 'visible';
+            }
+        }
+        console.log(document.querySelector('.flex-container').style.width);
+    </script>
+</body>
+
+</html>
